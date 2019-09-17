@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="XianYu:war exploded">
+    <output-path>$PROJECT_DIR$/target/XianYu</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>XianYu</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="XianYu" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/XianYu/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="XianYu/web/Web" />
+    </root>
+  </artifact>
+</component>
