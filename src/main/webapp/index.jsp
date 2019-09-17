@@ -43,3 +43,35 @@
 </div>
 </body>
 </html>
+<script>
+    function login() {
+        var sjhm = $("#sjhm").val();
+        var pwd = $("#pwd").val();
+        if(sjhm==""||pwd==""){
+            //toastr.success('提交数据成功');
+            //toastr.error('Error');
+            //toastr.warning('只能选择一行进行编辑');
+            //toastr.info('info');
+            toastr.warning('请输入用户名和密码');
+            return;
+        }
+        $.ajax({
+            url: "login/login",
+            data: {"sjhm": sjhm,"pwd":pwd},
+            type: "get",
+            timeout: 3000,
+            dataType: "json",
+            async: false,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                toastr.error('链接超时！');
+            },
+            success: function (responseText, textStatus, XMLHttpRequest) {
+                if(responseText.code=="-1"){
+                    toastr.info('用户名或密码不正确！');
+                    return;
+                }
+                location.reload();
+            }
+        });
+    }
+</script>
