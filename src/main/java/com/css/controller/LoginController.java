@@ -23,7 +23,7 @@ public class LoginController {
     LoginService loginService;
 
     @ResponseBody
-    @RequestMapping(value = "/login", produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "login.do", produces = "text/html;charset=UTF-8")
     public JsonResponse loginIn(HttpServletRequest request) throws Exception {
         User user = new User();
         JsonResponse jsonResponse = new JsonResponse();
