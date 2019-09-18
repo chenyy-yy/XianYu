@@ -42,4 +42,29 @@
         </if>
     </select>
 
+    <select id="findBySjhm" resultType="com.css.entity.User" parameterType="com.css.entity.User">
+        select
+            *
+        from
+            user
+        where
+            (
+            sjhm = #{sjhm}
+        OR
+            zjhm = #{zjhm}
+            )
+        AND
+            yxbz = 'Y'
+    </select>
+
+    <insert id="saveUser" parameterType="com.css.entity.User">
+        insert into
+            user
+        values
+            (
+            #{id},#{sjhm},#{zjhm},
+            #{xm},#{pwd},#{yhlx},
+            #{yxbz},#{lrsj},#{xgsj}
+            )
+    </insert>
 </mapper>
