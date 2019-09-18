@@ -9,8 +9,15 @@
 <html>
 <head>
     <title>首页</title>
-</head>
+    <%@ include file='/view/common/head.jsp' %></head>
 <body>
-sss
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">SVN</a></li>
+        <li><a href="#">iOS</a></li>
+        <li><a href="#">VB.Net</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">PHP</a></li>
+    </ul>
 </body>
 </html>

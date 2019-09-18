@@ -32,7 +32,6 @@ public class UserController {
         JsonResponse jsonResponse = new JsonResponse();
         user.setSjhm(request.getParameter("sjhm"));
         user.setPwd(MD5Utils.md52(request.getParameter("pwd")));
-
         List<User> userList = userService.userLogin(user);
 
         if (userList != null && userList.size() == 1) {
