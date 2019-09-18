@@ -14,4 +14,8 @@ import java.util.List;
 public interface UserMapper {
 
     List<User> userLogin(User user);
+
+    User findBySjhm(User user);
+
+    Integer saveUser(User user);
 }
