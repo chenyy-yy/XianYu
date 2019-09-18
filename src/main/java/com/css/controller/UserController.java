@@ -1,11 +1,13 @@
 package com.css.controller;
 
 import com.css.entity.User;
-import com.css.service.LoginService;
+import com.css.service.UserService;
 import com.css.util.JsonResponse;
+import com.css.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,19 +18,21 @@ import java.util.List;
  * @Date: 2019/9/17 9:19
  */
 @Controller
-@RequestMapping(value = "/login")
-public class LoginController {
+@RequestMapping(value = "/user")
+public class UserController {
 
     @Autowired
-    LoginService loginService;
+    UserService userService;
 
     @ResponseBody
-    @RequestMapping(value = "login.do", produces = "text/html;charset=UTF-8")
-    public JsonResponse loginIn(HttpServletRequest request) throws Exception {
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public JsonResponse userIn(HttpServletRequest request) throws Exception {
         User user = new User();
         JsonResponse jsonResponse = new JsonResponse();
+        user.setSjhm(request.getParameter("sjhm"));
+        user.setPwd(MD5Utils.md52(request.getParameter("sjhm")));
 
-        List<User> userList = loginService.userLogin(user);
+        List<User> userList = userService.userLogin(user);
 
         if (userList != null && userList.size() == 1) {
             request.getSession().setAttribute("user",userList.get(0));//用户名存入该用户的session 中

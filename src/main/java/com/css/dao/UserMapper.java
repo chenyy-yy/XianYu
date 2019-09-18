@@ -1,6 +1,7 @@
 package com.css.dao;
 
 import com.css.entity.User;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

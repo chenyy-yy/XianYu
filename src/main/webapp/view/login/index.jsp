@@ -58,7 +58,7 @@
             return;
         }
         $.ajax({
-            url: "user/login",
+            url: "/login",
             data: {"sjhm": sjhm,"pwd":pwd},
             type: "post",
             timeout: 3000,

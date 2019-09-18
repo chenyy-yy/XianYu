@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="XianYu.war">
+    <root id="archive" name="css.war">
       <element id="artifact" artifact-name="XianYu:war exploded" />
     </root>
   </artifact>

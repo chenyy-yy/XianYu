@@ -11,9 +11,9 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
     <!-- 自动扫描  @Controller-->
     <context:component-scan base-package="com.css.controller"/>
-    <context:component-scan base-package="com.css.entity"/>
     <context:component-scan base-package="com.css.service"/>
     <context:component-scan base-package="com.css.dao"/>
+    <context:component-scan base-package="com.css.entity"/>
 
     <mvc:default-servlet-handler/>
 
@@ -51,5 +51,6 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="4096"/>
     </bean>
+    <import resource="classpath*:spring-mybatis.xml"/>
     <mvc:annotation-driven></mvc:annotation-driven>
 </beans>
