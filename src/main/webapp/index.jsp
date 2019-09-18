@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-    <%@ include file='view/common/head.jsp' %>
+    <%@ include file='/view/common/head.jsp' %>
 </head>
 <body>
 <div class="modal-dialog" style="padding-top: 10%;">
@@ -33,6 +33,9 @@
             </form>
         </div>
         <div class="modal-footer">
+            <div class="modal-title text-center" align="right">
+                <a href="">忘记密码？</a>
+            </div>
             <div class="form-group">
                 <button type="button" class="btn btn-primary form-control"  onclick="login()">登录</button>
             </div>
@@ -43,6 +46,8 @@
         </div>
     </div>
 </div>
+<!-- 页尾 版权声明 -->
+<jsp:include page="/view/common/buttom.jsp"/>
 </body>
 </html>
 <script>
