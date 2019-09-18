@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -24,9 +22,16 @@ public class UserController {
 
     @Autowired
     UserService userService;
+   //注册跳转页面
+    @RequestMapping("/main")
+    public String studentMain()
+    {
+        return "/view/home/useradmin";
+    }
+    //忘记密码跳转页面
 
     @ResponseBody
-    @RequestMapping(value = "login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public JsonResponse loginIn(HttpServletRequest request) throws Exception {
         User user = new User();
         JsonResponse jsonResponse = new JsonResponse();
