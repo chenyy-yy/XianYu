@@ -11,6 +11,7 @@
 <head>
     <title>Title</title>
     <%@ include file='/view/common/head.jsp' %>
+    <link type="text/css" rel="stylesheet" href="/common/css/login.css"/>
 </head>
 <body>
 <div class="modal-dialog" style="padding-top: 10%;">

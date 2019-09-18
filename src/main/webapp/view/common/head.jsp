@@ -5,7 +5,6 @@
 <link type="text/css" rel="stylesheet" href="/common/bootstrap-4.3.1-dist/css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="/common/toastr/toastr.css"/>
 <link type="text/css" rel="stylesheet" href="/common/css/common.css"/>
-<link type="text/css" rel="stylesheet" href="/common/css/login.css"/>
 <link type="text/css" rel="stylesheet" href="/common/css/mycss.css"/>
 <script type="text/javascript" src="/common/js/login.js"></script>
 <script type="text/javascript" src="/common/js/jquery-3.1.1.min.js"></script>

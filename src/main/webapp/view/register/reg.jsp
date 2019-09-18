@@ -11,6 +11,7 @@
 <head>
     <title>注册</title>
     <%@ include file='../common/head.jsp' %>
+    <link type="text/css" rel="stylesheet" href="/common/css/reg.css"/>
 </head>
 <body>
 <div class="modal-dialog" style="padding-top: 10%;">
@@ -62,6 +63,8 @@
         </div>
     </div>
 </div>
+<!-- 页尾 版权声明 -->
+<jsp:include page="/view/common/buttom.jsp"/>
 </body>
 </html>
 <script>
