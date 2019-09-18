@@ -81,4 +81,8 @@
             }
         });
     }
+
+    function open_register(){
+        location.href='reg';
+    }
 </script>

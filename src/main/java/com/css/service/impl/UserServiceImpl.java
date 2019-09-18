@@ -22,4 +22,15 @@ public class UserServiceImpl implements UserService {
     public List<User> userLogin(User user) {
         return userMapper.userLogin(user);
     }
+
+    @Override
+    public User findByUser(User user) {
+        return userMapper.findBySjhm(user);
+    }
+
+    @Override
+    public Integer saveUser(User user) {
+        return userMapper.saveUser(user);
+    }
+
 }

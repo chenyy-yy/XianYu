@@ -12,4 +12,7 @@ import java.util.List;
 public interface UserService {
     List<User> userLogin(User user);
 
+    User findByUser(User user);
+
+    Integer saveUser(User user);
 }
