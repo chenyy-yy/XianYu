@@ -9,3 +9,6 @@
 <script type="text/javascript" src="common/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="common/toastr/toastr.min.js"></script>
 
+<script>
+    toastr.options.positionClass = 'toast-center-center';
+</script>

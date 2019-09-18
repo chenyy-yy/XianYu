@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -26,11 +27,11 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public JsonResponse userIn(HttpServletRequest request) throws Exception {
+    public JsonResponse loginIn(HttpServletRequest request) throws Exception {
         User user = new User();
         JsonResponse jsonResponse = new JsonResponse();
         user.setSjhm(request.getParameter("sjhm"));
-        user.setPwd(MD5Utils.md52(request.getParameter("sjhm")));
+        user.setPwd(MD5Utils.md52(request.getParameter("pwd")));
 
         List<User> userList = userService.userLogin(user);
 
@@ -39,9 +40,14 @@ public class UserController {
             jsonResponse.setCode("0");
             jsonResponse.setMsg("登录成功");
         } else {
-            jsonResponse.setCode("1");
+            jsonResponse.setCode("-1");
             jsonResponse.setMsg("用户名或密码错误");
         }
         return jsonResponse;
+    }
+
+    @RequestMapping(value = "toHome", method = RequestMethod.GET)
+    public String toHome(HttpServletRequest request) throws Exception {
+        return "view/home/home";
     }
 }

@@ -68,11 +68,11 @@
                 toastr.error('链接超时！');
             },
             success: function (responseText, textStatus, XMLHttpRequest) {
-                if(responseText.code=="-1"){
+                if(responseText.code!="0"){
                     toastr.info('用户名或密码不正确！');
                     return;
                 }
-                location.reload();
+                location.href='user/toHome';
             }
         });
     }
